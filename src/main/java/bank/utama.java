@@ -27,6 +27,7 @@ public class utama extends javax.swing.JFrame {
         mainPanel.add("cicilan", cpanel);
     }
 
+
     private void showPanel(String panelIdentifier) {
         CardLayout cardLayout = (CardLayout) mainPanel.getLayout();
         cardLayout.show(mainPanel, panelIdentifier);

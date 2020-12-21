@@ -27,13 +27,17 @@ public class ppob extends javax.swing.JPanel {
 
     private void bacaData() {
         db.removeAll(db);
+
         try {
+
             Connection c = K.getCon();
             Statement s = c.createStatement();
             String sql = "Select * from saldo";
             ResultSet r = s.executeQuery(sql);
             String tem;
+
             while (r.next()) {
+
                 Object[] o = new Object[3];
                 o[0] = r.getString("no_rek");
                 o[1] = r.getString("nama");
@@ -52,7 +56,9 @@ public class ppob extends javax.swing.JPanel {
 
     }
 
+
     private void baca() {
+
         db1.removeAll(db1);
         try {
             Connection c = K.getCon();
@@ -99,6 +105,7 @@ public class ppob extends javax.swing.JPanel {
     }
 
     public void Tagihan() {
+
         pesantag();
         String norek = txtnorek.getText();
         String saldo = lblsaldo.getText();
@@ -132,7 +139,9 @@ public class ppob extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Saldo anda kurang");
             txtnom.setText("");
         }
+
         bacaData();
+
         baca();
     }
 
@@ -249,24 +258,35 @@ public class ppob extends javax.swing.JPanel {
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
+
+
         jPanel1Layout.setHorizontalGroup(
+
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(19, 19, 19)
+
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+
                                         .addComponent(tgl)
+
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addComponent(jLabel3)
+
                                                 .addGap(18, 18, 18)
                                                 .addComponent(txtnorek, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(jButton1))
+
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addComponent(jLabel6)
+
                                                         .addComponent(jLabel4)
+
                                                         .addComponent(jLabel9))
+
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addComponent(lblnama)
@@ -280,9 +300,12 @@ public class ppob extends javax.swing.JPanel {
                                                 .addGap(18, 18, 18)
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addComponent(jButton3)
+
                                                         .addComponent(txtnom))))
+
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGroup(jPanel1Layout.createSequentialGroup()
+
                                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addContainerGap())
         );
@@ -299,11 +322,13 @@ public class ppob extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(jLabel3)
+
                                         .addComponent(txtnorek, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jButton1))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(jLabel4)
+
                                         .addComponent(lblsaldo))
                                 .addGap(27, 27, 27)
 
@@ -332,6 +357,7 @@ public class ppob extends javax.swing.JPanel {
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
+
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -359,12 +385,14 @@ public class ppob extends javax.swing.JPanel {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
         baca();
         for (int i = 0; i < db1.size(); i++) {
+
             if (txtid.getText().equals(db1.get(i).get(0))) {
                 System.out.print("ada");
                 lblnama.setText(db1.get(i).get(1));
                 txtnom.setText(db1.get(i).get(2));
                 break;
             } else {
+
                 txtnom.setText("ID Pelanggan Salah");
             }
         }

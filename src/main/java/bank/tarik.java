@@ -12,6 +12,7 @@ import sql.koneksi;
 
 
 public class tarik extends javax.swing.JPanel {
+
     private Vector<Vector<String>> db = new Vector();
     private Vector<Vector<String>> db1 = new Vector();
 
@@ -28,6 +29,7 @@ public class tarik extends javax.swing.JPanel {
 
 
     private void bacaData() {
+
         db.removeAll(db);
         try {
             Connection c = K.getCon();
@@ -51,7 +53,9 @@ public class tarik extends javax.swing.JPanel {
             r.close();
 
             s.close();
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
+
             System.out.println(e.getMessage());
         }
 
@@ -78,19 +82,23 @@ public class tarik extends javax.swing.JPanel {
 
 
         int upsaldo = Integer.parseInt(lblsaldo.getText()) - Integer.parseInt(txtnom.getText());
+
         String us = "" + upsaldo;
 
         if (Integer.parseInt(lblsaldo.getText()) > Integer.parseInt(txtnom.getText())) {
             try {
                 Connection con = K.getCon();
                 Statement stat = con.createStatement();
+
                 try {
                     String sql = "INSERT INTO transaksi VALUES('"+tg+"','"+norek+"','"+nama+"','"+rek+"','"+ status+"','"+ ket+"','"+nom+"','"+saldo+"');";
                     String sql1 = "UPDATE `saldo` SET `jml_saldo` = '" + us + "' WHERE `no_rek` = '" + txtnorek.getText() + "';";
                     stat.execute(sql);
                     stat.execute(sql1);
                     stat.close();
-                } catch (SQLException ex) {
+                } catch (SQLException ex)
+
+                {
                     System.out.println(ex);
                 }
             } catch (SQLException ex) {
@@ -153,12 +161,14 @@ public class tarik extends javax.swing.JPanel {
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
+
                 jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
+
                 jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addContainerGap()
@@ -168,7 +178,7 @@ public class tarik extends javax.swing.JPanel {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel2.setFont(new java.awt.Font("Arial", 3, 20)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 3, 20));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Tarik Tunai");
 
@@ -225,12 +235,15 @@ public class tarik extends javax.swing.JPanel {
                         .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addContainerGap()
+
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(tgl)
+
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addComponent(jLabel7)
                                                         .addComponent(jLabel9))
+
                                                 .addGap(18, 18, 18)
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addComponent(lblnama)
@@ -239,24 +252,34 @@ public class tarik extends javax.swing.JPanel {
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addComponent(jLabel5)
+
                                                         .addComponent(jLabel4))
+
                                                 .addGap(18, 18, 18)
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                                         .addComponent(lblsaldo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                         .addComponent(txtnorek, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                 .addGap(18, 18, 18)
                                                 .addComponent(jButton1)))
+
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
+
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
+
+
                                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(28, 28, 28)
+
                                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(23, 23, 23)
+
                                 .addComponent(tgl)
+
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(jLabel4)
                                         .addComponent(txtnorek, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -266,19 +289,24 @@ public class tarik extends javax.swing.JPanel {
                                         .addComponent(jLabel5)
                                         .addComponent(lblsaldo))
                                 .addGap(18, 18, 18)
+
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(jLabel9)
                                         .addComponent(txtnom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
+
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(jLabel7)
                                         .addComponent(lblnama))
                                 .addGap(34, 34, 34)
+
                                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(39, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+
+
         this.setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -16,6 +16,7 @@ public class nasabah extends javax.swing.JPanel {
 
 
     public nasabah() {
+
         initComponents();
         con = K.getCon();
         header = new Vector();
@@ -27,8 +28,11 @@ public class nasabah extends javax.swing.JPanel {
             String selection=(String)combo.getSelectedItem();
 
             String query="select * from nasabah where "+selection+"=? ";
+
             PreparedStatement pst=con.prepareStatement(query);
+
             pst.setString(1, txtcari.getText());
+
             ResultSet rs=pst.executeQuery();
 
             tbData.setModel(DbUtils.resultSetToTableModel(rs));
@@ -72,6 +76,7 @@ public class nasabah extends javax.swing.JPanel {
                         .addGap(0, 0, Short.MAX_VALUE)
         );
         jInternalFrame1Layout.setVerticalGroup(
+
                 jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGap(0, 0, Short.MAX_VALUE)
         );
@@ -89,6 +94,7 @@ public class nasabah extends javax.swing.JPanel {
         });
 
         txtcari.setEditable(false);
+
         txtcari.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtcariKeyPressed(evt);
@@ -100,6 +106,7 @@ public class nasabah extends javax.swing.JPanel {
 
                 },
                 new String [] {
+
                         "No Rek", "Nama", "Jenis"
                 }
         ));
@@ -121,24 +128,30 @@ public class nasabah extends javax.swing.JPanel {
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel7.setFont(new java.awt.Font("Arial", 3, 20)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Arial", 3, 20));
+
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Data Nasabah");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
+
         jPanel5Layout.setHorizontalGroup(
+
                 jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addGap(35, 35, 35)
+
                                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
                 jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 
+
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+
                                 .addComponent(jLabel7)
                                 .addGap(8, 8, 8))
         );
@@ -157,14 +170,19 @@ public class nasabah extends javax.swing.JPanel {
 
                                                 .addComponent(combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(35, 35, 35)
+
                                                 .addComponent(txtcari, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(18, 18, 18)
+
                                                 .addComponent(jButton2))
+
                                         .addComponent(jButton1))
+
                                 .addContainerGap(20, Short.MAX_VALUE))
 
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addContainerGap(21, Short.MAX_VALUE)
+
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap())
                         .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -174,13 +192,17 @@ public class nasabah extends javax.swing.JPanel {
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(26, 26, 26)
+
                                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(43, 43, 43)
+
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(jLabel1)
+
                                         .addComponent(combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(txtcari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jButton2))
+
                                 .addGap(42, 42, 42)
 
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -193,8 +215,9 @@ public class nasabah extends javax.swing.JPanel {
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALPHA1\\Desktop\\UASoop\\images\\logob.jpg"));
 
+
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALPHA1\\Desktop\\UASoop\\images\\logob.jpg"));
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -237,7 +260,6 @@ public class nasabah extends javax.swing.JPanel {
 
 
     private void comboActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
         if(combo.getSelectedItem().equals("NO_REK")){
             txtcari.setEditable(true);
         }
@@ -248,14 +270,12 @@ public class nasabah extends javax.swing.JPanel {
     }
 
     private void txtcariKeyPressed(java.awt.event.KeyEvent evt) {
-        // TODO add your handling code here:
         if(evt.getKeyCode()==KeyEvent.VK_ENTER){
             simpan1();
         }
     }
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
         jsc.setViewportView(new lihat_t());
     }
 

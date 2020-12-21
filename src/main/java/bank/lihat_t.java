@@ -17,6 +17,7 @@ public class lihat_t extends javax.swing.JPanel {
     private Vector data, header, tmp;
 
     public lihat_t() {
+
         initComponents();
         con = K.getCon();
 
@@ -25,6 +26,7 @@ public class lihat_t extends javax.swing.JPanel {
 
     public void cari() {
         DefaultTableModel model = (DefaultTableModel) tbData.getModel();
+
         String Norek = txtno.getText();
         String Nama = txtnama.getText();
         String Aw = txtP1.getText();
@@ -35,6 +37,7 @@ public class lihat_t extends javax.swing.JPanel {
             Statement s = c.createStatement();
             String sql = "SELECT * FROM transaksi WHERE `no_rek`='" + Norek + "' AND `nama`='" + Nama + "' AND DAY(tanggal) BETWEEN " + Aw + " AND " + Ak;
             ResultSet r = s.executeQuery(sql);
+
             while (r.next()) {
                 Object[] o = new Object[4];
                 o[0] = r.getString("tanggal");
@@ -48,7 +51,9 @@ public class lihat_t extends javax.swing.JPanel {
             }
             r.close();
             s.close();
+
         } catch (Exception e) {
+
             System.out.println("No Rekening atas nama " + Nama + " Tidak Ada");
             System.out.print(e.getMessage());
         }
@@ -58,11 +63,13 @@ public class lihat_t extends javax.swing.JPanel {
     public void tampil() {
         String sql = "select * from transaksi where no_rek='"+txtno.getText()+"' and nama='"+txtnama.getText()+"' and Tanggal between "+txtP1.getText()+"and"+txtP2.getText();
         try {
+
             data = new Vector();
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(sql);
             while (rs.next()) {
                 tmp = new Vector();
+
                 tmp.add(rs.getString(1));
                 tmp.add(rs.getString(2));
                 tmp.add(rs.getString(3));
@@ -76,9 +83,11 @@ public class lihat_t extends javax.swing.JPanel {
             }
             header = new Vector();
             for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++) {
+
                 header.add(rs.getMetaData().getColumnName(i));
             }
             tbData.setModel(new DefaultTableModel(data, header));
+
         } catch (Exception e) {
         }
     }
@@ -115,16 +124,23 @@ public class lihat_t extends javax.swing.JPanel {
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
+
         jPanel2Layout.setHorizontalGroup(
+
                 jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+
                         .addGroup(jPanel2Layout.createSequentialGroup()
+
                                 .addGap(12, 12, 12)
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(15, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
+
                 jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+
                         .addGroup(jPanel2Layout.createSequentialGroup()
+
                                 .addContainerGap()
                                 .addComponent(jLabel1)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -132,13 +148,16 @@ public class lihat_t extends javax.swing.JPanel {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel2.setFont(new java.awt.Font("Arial", 3, 20)); // NOI18N
+
+        jLabel2.setFont(new java.awt.Font("Arial", 3, 20));
+
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Mutasi");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
+
         jPanel3Layout.setHorizontalGroup(
                 jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel3Layout.createSequentialGroup()
@@ -222,18 +241,22 @@ public class lihat_t extends javax.swing.JPanel {
                                 .addGap(47, 47, 47)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(jLabel3)
+
                                         .addComponent(txtno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(jLabel4)
+
                                         .addComponent(txtnama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(jLabel5)
+
                                         .addComponent(txtP1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel6)
                                         .addComponent(txtP2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jButton1))
+
                                 .addGap(19, 19, 19)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(35, Short.MAX_VALUE))
@@ -254,8 +277,7 @@ public class lihat_t extends javax.swing.JPanel {
     }
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
-        cari();// tampil();
+        cari();
     }
 
 

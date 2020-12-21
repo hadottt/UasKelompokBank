@@ -90,13 +90,16 @@ public class cicilan extends javax.swing.JPanel {
     public void pesancicil() {
         try {
 
+
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "gatot!!!");
+            JOptionPane.showMessageDialog(null, "Gagal Bayar");
         }
-        JOptionPane.showMessageDialog(null, "Sukses!!!");
+
+        JOptionPane.showMessageDialog(null, "Berhasil Membayar");
     }
 
     public void Cicilan() {
+
         pesancicil();
         String norek = txtnorek.getText();
         String saldo = lblsaldo.getText();
@@ -114,6 +117,8 @@ public class cicilan extends javax.swing.JPanel {
             try {
                 Connection con = K.getCon();
                 Statement stat = con.createStatement();
+
+
                 try {
                     String sql = "INSERT INTO transaksi VALUES('"+tg+"','"+norek+"','"+nama+"','"+ rek+"','"+ status+"','"+ ket+"','"+nom+"','"+saldo+"');";
                     String sql1 = "UPDATE `saldo` SET `jml_saldo` = '" + us + "' WHERE `no_rek` = '" + txtnorek.getText() + "';";
@@ -128,10 +133,13 @@ public class cicilan extends javax.swing.JPanel {
             }
             lblsaldo.setText(".....................................");
         }else{
-            JOptionPane.showMessageDialog(null, "Jumlah Saldo Anda Kurang!!!");
+
+            JOptionPane.showMessageDialog(null, "Saldo anda tidak cukup");
+
             txtnom.setText("");
         }
         bacaData();
+
         baca();
     }
 
@@ -185,13 +193,17 @@ public class cicilan extends javax.swing.JPanel {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel11.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Arial", 1, 20));
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+
         jLabel11.setText("Pembayaran Cicilan");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
+
+
                 jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(35, 35, 35)
@@ -244,6 +256,7 @@ public class cicilan extends javax.swing.JPanel {
 
         jButton3.setText("Bayar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
+
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
@@ -282,16 +295,23 @@ public class cicilan extends javax.swing.JPanel {
 
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addComponent(jLabel7)
+
                                                 .addGap(18, 18, 18)
+
                                                 .addComponent(jButton3))
+
                                         .addComponent(tgl)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
+
                                                 .addComponent(jLabel3)
+
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addComponent(txtnorek, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+
                                                 .addComponent(jButton1))
                                         .addGroup(jPanel1Layout.createSequentialGroup()
+
                                                 .addComponent(jLabel4)
                                                 .addGap(28, 28, 28)
                                                 .addComponent(lblsaldo))
@@ -313,14 +333,19 @@ public class cicilan extends javax.swing.JPanel {
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 
                         .addGroup(jPanel1Layout.createSequentialGroup()
+
                                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(34, 34, 34)
                                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(tgl)
+
+
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(jLabel3)
+
+
                                         .addComponent(txtnorek, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jButton1))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -336,6 +361,8 @@ public class cicilan extends javax.swing.JPanel {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addComponent(jLabel6)
+
+
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                         .addComponent(jLabel9)
@@ -376,8 +403,10 @@ public class cicilan extends javax.swing.JPanel {
         for (int i = 0; i < db.size(); i++) {
             if (txtnorek.getText().equals(db.get(i).get(0))) {
                 System.out.print("ada");
+
                 lblsaldo.setText(db.get(i).get(2));
                 break;
+
             } else {
                 lblsaldo.setText("NoRek Salah");
             }
@@ -405,7 +434,6 @@ public class cicilan extends javax.swing.JPanel {
     }
 
     private void comboActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
         if(combo.getSelectedItem().equals("visa")){
             txtkontrak.setEditable(true);
         }

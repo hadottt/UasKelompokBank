@@ -1,4 +1,3 @@
-
 package sql;
 
 import java.sql.Connection;
@@ -11,9 +10,13 @@ public class koneksi {
 
     public koneksi() {
         try {
+
             Class.forName("com.mysql.jdbc.Driver");
+
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bank","root", "");
+
         } catch (Exception e) {
+
             System.exit(0);
         }
     }

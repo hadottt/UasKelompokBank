@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
 
 
 public class setor extends javax.swing.JPanel {
+
     private Vector<Vector<String>> db = new Vector();
     private Vector<Vector<String>> db1 = new Vector();
 
@@ -22,10 +23,12 @@ public class setor extends javax.swing.JPanel {
     private koneksi K = new koneksi();
 
     public setor() {
+
         initComponents();
         con = K.getCon();
         bacaData();
         date();
+
     }
 
     public void pesansetor() {
@@ -67,6 +70,7 @@ public class setor extends javax.swing.JPanel {
     }
 
     public void date() {
+
         Calendar cal = Calendar.getInstance();
         SimpleDateFormat contoh4 = new SimpleDateFormat("dd-M-yyyy hh:mm:ss");
         String Tanggal = contoh4.format(cal.getTime());
@@ -141,7 +145,9 @@ public class setor extends javax.swing.JPanel {
 
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+
         jPanel2.setLayout(jPanel2Layout);
+
         jPanel2Layout.setHorizontalGroup(
                 jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -157,7 +163,7 @@ public class setor extends javax.swing.JPanel {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel2.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 3, 18));
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
@@ -166,6 +172,7 @@ public class setor extends javax.swing.JPanel {
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
+
                 jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addContainerGap()
@@ -173,6 +180,7 @@ public class setor extends javax.swing.JPanel {
                                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
+
                 jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -219,9 +227,11 @@ public class setor extends javax.swing.JPanel {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(tgl)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
+
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addComponent(jLabel7)
                                                         .addComponent(jLabel9))
+
                                                 .addGap(18, 18, 18)
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addComponent(lblnama)
@@ -242,11 +252,13 @@ public class setor extends javax.swing.JPanel {
         jPanel1Layout.setVerticalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
+
                                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(33, 33, 33)
                                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(39, 39, 39)
                                 .addComponent(tgl)
+
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(jLabel4)
@@ -260,9 +272,12 @@ public class setor extends javax.swing.JPanel {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(jLabel7)
                                         .addComponent(lblnama))
+
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(jLabel9)
+
+
                                         .addComponent(txtnom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -286,8 +301,8 @@ public class setor extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
         bacaData();
         for (int i = 0; i < db.size(); i++) {
+
             if (txtnorek.getText().equals(db.get(i).get(1))) {
-                //   System.out.print("ada");
                 lblsaldo.setText(db.get(i).get(2));
                 lblnama.setText(db.get(i).get(0));
                 break;

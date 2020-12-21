@@ -57,7 +57,7 @@ public class login extends javax.swing.JFrame {
         setAutoRequestFocus(false);
 
         mainPanel.setLayout(new java.awt.CardLayout());
-        //set background
+
 
         jPanel5.setBackground(new java.awt.Color(64, 227, 245, 255));
 
@@ -244,7 +244,8 @@ public class login extends javax.swing.JFrame {
     }
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+
+
         try {
             Statement statement = (Statement)K.getCon().createStatement();
             ResultSet result=statement.executeQuery("select * from admin where username='"+txtuser.getText()+"'");
@@ -271,7 +272,6 @@ public class login extends javax.swing.JFrame {
     }
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
         txtuser.setText("");
         txtpass.setText("");
     }

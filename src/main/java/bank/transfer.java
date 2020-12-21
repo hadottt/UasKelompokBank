@@ -12,17 +12,20 @@ import sql.koneksi;
 
 
 public class transfer extends javax.swing.JPanel {
+
     private Vector<Vector<String>> db = new Vector();
     private Connection con;
     private koneksi K = new koneksi();
 
     public transfer() {
+
         initComponents();
         con = K.getCon();
         bacaData();
         date();
     }
     public void pesantf() {
+
         Calendar cal = Calendar.getInstance();
         SimpleDateFormat contoh4 = new SimpleDateFormat("yyyy/MM/dd   HH:mm:ss");
         String Tanggal = contoh4.format(cal.getTime());
@@ -138,12 +141,15 @@ public class transfer extends javax.swing.JPanel {
         jPanel1.setLayout(jPanel1Layout);
 
         jPanel1Layout.setHorizontalGroup(
+
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+
                         .addGap(0, 381, Short.MAX_VALUE)
         );
 
         jPanel1Layout.setVerticalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+
                         .addGap(0, 425, Short.MAX_VALUE)
         );
 
@@ -157,15 +163,21 @@ public class transfer extends javax.swing.JPanel {
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
+
                 jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+
                         .addGroup(jPanel2Layout.createSequentialGroup()
+
                                 .addContainerGap()
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
+
                 jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+
                         .addGroup(jPanel2Layout.createSequentialGroup()
+
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -179,6 +191,7 @@ public class transfer extends javax.swing.JPanel {
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
+
                 jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addContainerGap()
@@ -186,6 +199,7 @@ public class transfer extends javax.swing.JPanel {
                                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
+
                 jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -244,8 +258,11 @@ public class transfer extends javax.swing.JPanel {
                                         .addGroup(jPanel4Layout.createSequentialGroup()
                                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addComponent(jLabel7)
+
                                                         .addComponent(jLabel9)
+
                                                         .addComponent(jLabel3))
+
                                                 .addGap(18, 18, 18)
                                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addComponent(lblnama)
@@ -260,15 +277,21 @@ public class transfer extends javax.swing.JPanel {
         );
         jPanel4Layout.setVerticalGroup(
                 jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+
                         .addGroup(jPanel4Layout.createSequentialGroup()
+
                                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(33, 33, 33)
                                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 39, Short.MAX_VALUE)
+
                                 .addComponent(tgl)
+
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(jLabel4)
+
                                         .addComponent(txtdrek, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jButton1))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -276,6 +299,7 @@ public class transfer extends javax.swing.JPanel {
                                         .addComponent(jLabel5)
                                         .addComponent(lblsaldo))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(jLabel7)
                                         .addComponent(lblnama))
@@ -284,6 +308,7 @@ public class transfer extends javax.swing.JPanel {
                                         .addComponent(jLabel3)
                                         .addComponent(txtkrek, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(10, 10, 10)
+
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(jLabel9)
                                         .addComponent(txtnom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -293,11 +318,13 @@ public class transfer extends javax.swing.JPanel {
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+
         this.setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
@@ -307,6 +334,7 @@ public class transfer extends javax.swing.JPanel {
     }
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+
         bacaData();
         for (int i = 0; i < db.size(); i++) {
             if (txtdrek.getText().equals(db.get(i).get(1))) {

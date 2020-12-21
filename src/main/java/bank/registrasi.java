@@ -8,15 +8,18 @@ import sql.koneksi;
 
 
 public class registrasi extends javax.swing.JPanel {
+
     private Connection con;
     private koneksi K = new koneksi();
 
     public registrasi() {
+
         initComponents();
         con = K.getCon();
     }
 
     public void simpan() {
+
         String Nama = txtnama.getText();
         String NIK = txtnik.getText();
         String rek = txtrek.getText();
@@ -45,7 +48,9 @@ public class registrasi extends javax.swing.JPanel {
             } catch (SQLException ex) {
                 System.out.println(ex);
             }
-        } catch (SQLException ex) {
+        }
+        catch (SQLException ex) {
+
         }
 
         txtrek.setText("");
@@ -57,6 +62,7 @@ public class registrasi extends javax.swing.JPanel {
     }
 
     public void verifikasi() {
+
         String user = un.getText();
         String PIN = pin.getText();
         try {
@@ -115,6 +121,7 @@ public class registrasi extends javax.swing.JPanel {
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
+
                 jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addContainerGap()
@@ -122,6 +129,7 @@ public class registrasi extends javax.swing.JPanel {
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
+
                 jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addContainerGap()
@@ -134,11 +142,14 @@ public class registrasi extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Arial", 1, 18));
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
         jLabel2.setText("REGISTER");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
+
+
                 jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addContainerGap()
@@ -146,6 +157,8 @@ public class registrasi extends javax.swing.JPanel {
                                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
+
+
                 jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -173,6 +186,7 @@ public class registrasi extends javax.swing.JPanel {
         rb3.setText("Tabungan Sekarang");
 
         jButton1.setText("DAFTAR");
+
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -180,6 +194,7 @@ public class registrasi extends javax.swing.JPanel {
         });
 
         jButton2.setText("VERIFIKASI");
+
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -193,6 +208,7 @@ public class registrasi extends javax.swing.JPanel {
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
+
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -278,12 +294,16 @@ public class registrasi extends javax.swing.JPanel {
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+
         this.setLayout(layout);
+
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
         layout.setVerticalGroup(
+
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -292,7 +312,6 @@ public class registrasi extends javax.swing.JPanel {
     }
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
         simpan();
         jenis.clearSelection();
     }
@@ -302,7 +321,7 @@ public class registrasi extends javax.swing.JPanel {
     }
 
 
-    //deklarasi variabel
+
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
